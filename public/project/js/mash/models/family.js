@@ -40,10 +40,6 @@ module.exports = {
 				parentA: family.parentA,
 				parentB: family.parentB,
 				child: family.child
-			}, function(err, result){
-				Family.find(function(err, result){
-					res.json(result);
-				});
-			});
+			}, utils.respToFindAllJSON(Family, res));
 	}
 }

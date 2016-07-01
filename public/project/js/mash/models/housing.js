@@ -40,10 +40,6 @@ module.exports = {
 				housing_type: housing.housing_type,
 				housing_price: housing.housing_price,
 				housing_location: housing.housing_location
-			}, function(err, result){
-				Housing.find(function(err, result){
-					res.json(result);
-				});
-			});
+			}, utils.respToFindAllJSON(Housing, res));
 	}
 }

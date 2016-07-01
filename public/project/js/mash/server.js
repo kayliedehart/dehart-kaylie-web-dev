@@ -2,17 +2,10 @@ var mongoose = require('mongoose');
 var express = require('express');
 var app = express();
 
-var bodyParser = require('body-parser');
-
 var passport = require('passport');
 var cookieParser = require('cookie-parser');
 var session = require('express-session');
 var services = require('./services')(app);
-
-app.use(bodyParser.json());         
-app.use(bodyParser.urlencoded({     
-    extended: true                  
-}));
 
 app.use(session({
     secret: 'B9D21C75FE2CDBD098E52D23C8A2E2DA',

@@ -56,10 +56,6 @@ module.exports = {
 				user_future_location: userProfile.user_future_location,
 				user_picture: userProfile.user_picture,
 				user_pets: userProfile.user_pets
-			}, function(err, result){
-				UserProfile.find(function(err, result){
-					res.json(result);
-				});
-			});
+			}, utils.respToFindAllJSON(UserProfile, res));
 	}
 }

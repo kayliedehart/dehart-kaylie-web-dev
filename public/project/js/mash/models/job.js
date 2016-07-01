@@ -38,6 +38,6 @@ module.exports = {
 			{
 				job_salary: job.job_salary,
 				major_required: job.major_required
-			}, utils.respToFindAllJSON(findAll, res));
+			}, utils.respToFindAllJSON(Job, res));
 	}
 }

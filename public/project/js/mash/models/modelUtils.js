@@ -1,3 +1,5 @@
+var bodyParser = require('body-parser');
+
 module.exports = {
 	respToJSON: function(res){
 		return function(err, results){

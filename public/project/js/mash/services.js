@@ -7,8 +7,16 @@ var marriage = require("./models/marriage.js");
 var pet = require("./models/pet.js");
 var userProfile = require("./models/userProfile.js");
 
+var bodyParser = require('body-parser');
+
 
 module.exports = function(app){
+
+	app.use(bodyParser.json());         
+	app.use(bodyParser.urlencoded({     
+	    extended: true                  
+	}));
+	
 	app.post('/rest/family', family.create);
 	app.get('/rest/family', family.findAll);
 	app.get('/rest/family/:id', family.findByID);

@@ -25,7 +25,6 @@ module.exports = {
 	},
 
 	create: function(req, res){
-		console.log(Location);
 		var location = req.body;
 		Location.create(location, function(err, result){
 			Location.find(function(err, result){
@@ -43,10 +42,6 @@ module.exports = {
 				city: location.city,
 				stateOrProvince: location.stateOrProvince,
 				country: location.country
-			}, function(err, result){
-				Location.find(function(err, result){
-					res.json(result);
-				});
-			});
+			}, utils.respToFindAllJSON(Location, res));
 	}
 }

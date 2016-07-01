@@ -36,6 +36,6 @@ module.exports = {
 				vehicle_type: vehicle.vehicle_type,
 				occupancy: vehicle.occupancy,
 				color: vehicle.color
-			}, utils.respToFindAllJSON(res));
+			}, utils.respToFindAllJSON(Vehicle, res));
 	}
 }

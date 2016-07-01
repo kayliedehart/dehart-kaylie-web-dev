@@ -36,10 +36,6 @@ module.exports = {
 			{_id: req.params.id},
 			{
 				pet_type: pet.pet_type
-			}, function(err, result){
-				Pet.find(function(err, result){
-					res.json(result);
-				});
-			});
+			}, utils.respToFindAllJSON(Pet, res));
 	}
 }

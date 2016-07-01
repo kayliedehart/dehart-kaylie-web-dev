@@ -38,10 +38,6 @@ module.exports = {
 			{
 				personA: marriage.personA,
 				personB: marriage.personB
-			}, function(err, result){
-				Marriage.find(function(err, result){
-					res.json(result);
-				});
-			});
+			}, utils.respToFindAllJSON(Marriage, res));
 	}
 }
