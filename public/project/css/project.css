@@ -1,0 +1,38 @@
+body {
+    background-color: #F2EEE2;
+}
+
+a {
+    color: #333;
+}
+
+.btn-primary {
+    color: #333;
+    border-color: #333;
+    background-color: #43C0F6;
+    background-image: none;
+}
+
+.btn-warning {
+    color: #333;
+    border-color: #333;
+    background-color: #F81884;
+}
+
+.btn-danger {
+    color: #333;
+    border-color: #333;
+    background-color: #F81884;
+}
+
+.btn-info {
+    color: #333;
+    border-color: #333;
+    background-color: #f5CE28;
+}
+
+.btn .btn-primary .form-control {
+    border-color: #333;
+    background-color: #43C0F6;
+    background-image: none;
+}

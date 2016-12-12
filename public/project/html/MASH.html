@@ -1,15 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="MASHApp">
 <head>
-    <meta charset="UTF-8">
-    <title>MASH</title>
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>MASH | Results</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/project.css">
 </head>
 <body>
+<div class="masthead clearfix">
+    <div class="inner">
+        <h3 class="masthead-brand">MASH</h3>
+        <nav class="nav nav-masthead">
+            <a class="nav-link active" href="../../index.html">Home</a>
+            <a class="nav-link" href="https://github.com/kayliedehart/dehart-kaylie-web-dev">Source</a>
+            <a class="nav-link" href="../../test/index.html">Test</a>
+        </nav>
+    </div>
+</div>
+
+<div class="col-xs-12">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>Congrats! The life that awaits you in the future:</h1>
+        </div>
+    </div>
+    <div class="row" id="house">
+        <div class="col-xs-12">
+            <label>You live in a:</label>
+            {{house}}
+        </div>
+    </div>
+    <div class="row" id="spouse">
+        <div class="col-xs-12">
+            <label>You're married to:</label>
+            {{spouse}}
+        </div>
+    </div>
+    <div class="row" id="kids">
+        <div class="col-xs-12">
+            <label>Number of kids:</label>
+            {{kids}}
+        </div>
+    </div>
+    <div class="row" id="job">
+        <div class="col-xs-12">
+            <label>Job:</label>
+            {{job}}
+        </div>
+    </div>
+    <div class="row" id="location">
+        <div class="col-xs-12">
+            <label>You will live in:</label>
+            {{location}}
+        </div>
+    </div>
+    <div class="row" id="pet">
+        <div class="col-xs-12">
+            <label>You will have a pet:</label>
+            {{pet}}
+        </div>
+    </div>
+    <div class="row" id="vehicle">
+        <div class="col-xs-12">
+            <label>You will drive a:</label>
+            {{vehicle}}
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <a href="details.html">
+                <button class="btn btn-primary" ng-controller="save();" style="width: 100%;">Save</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="js/index.js"></script>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+<script src="../js/app.js"></script>
 </body>
 </html>
