@@ -36,3 +36,7 @@ a {
     background-color: #43C0F6;
     background-image: none;
 }
+
+#loginForm.ng-submitted #username.ng-invalid {
+    background-color: red;
+}

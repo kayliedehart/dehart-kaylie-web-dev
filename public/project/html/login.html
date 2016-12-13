@@ -24,18 +24,24 @@
         </div>
     </div>
 
-    <form validate class="simple-form">
+    <form validate class="simple-form" id="loginForm" name="loginForm">
 
     <div class="row">
         <div class="col-xs-12">
-            <input ng-model="user.username" type="text" placeholder="username" class="form-control" required/>
+            <input ng-model="user.username" type="text" placeholder="username" class="form-control" id="username" name="username" required/>
         </div>
     </div>
+        <span ng-show="loginForm.$submitted && loginForm.username.$invalid">
+            Username is required
+        </span>
     <div class="row">
         <div class="col-xs-12">
-            <input ng-model="user.password" type="password" placeholder="password" class="form-control" required/>
+            <input ng-model="user.password" type="password" placeholder="password" class="form-control" id="password" name="password" required/>
         </div>
     </div>
+        <span ng-show="loginForm.$submitted && loginForm.password.$invalid">
+            Password is required
+        </span>
     <div class="row">
         <div class="col-xs-12">
             <button class="btn btn-primary form-control" ng-click="validate(user)"><a href="details.html#">Login</a></button>
