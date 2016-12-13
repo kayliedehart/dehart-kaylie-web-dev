@@ -14,97 +14,97 @@
 </head>
 <body>
 
-<div class="container">
+<div class="container" ng-init="profileLoad()">
     <div class="row">
         <div class="col-xs-10">
             <h1>Profile</h1>
         </div>
         <div class="col-xs-2">
-            <button class="btn btn-danger" onclick="deleteConfirm" style="width: 100%;">Delete</button>
+            <button class="btn btn-danger" ng-click="deleteConfirm()" style="width: 100%;">Delete</button>
         </div>
     </div>
     <div class="row" id="details">
         <div class="col-xs-12">
-            <div class="row">
+            <div class="row" ng-model="user.username">
                 <div class="col-xs-12">
                     <label>Username</label>
-                    {{username}}
+                    {{user.username}}
                 </div>
             </div>
-            <div class="row">
+            <div class="row" ng-model="user.current_location">
                 <div class="col-xs-12">
                     <label>Current Location</label>
-                    {{current_location}}
+                    {{user.current_location}}
                 </div>
             </div>
-            <div class="row">
+            <div class="row" ng-model="user.age">
                 <div class="col-xs-12">
                     <label>Age</label>
-                    {{age}}
+                    {{user.age}}
                 </div>
             </div>
-            <div class="row">
+            <div class="row" ng-model="user.major">
                 <div class="col-xs-12">
                     <label>College Major</label>
-                    {{major}}
+                    {{user.major}}
                 </div>
             </div>
-            <div class="row">
+            <div class="row" ng-model="user.gender">
                 <div class="col-xs-12">
                     <label>Gender</label>
-                    {{gender}}
+                    {{user.gender}}
                 </div>
             </div>
-            <div class="row">
+            <div class="row" ng-model="user.orientation">
                 <div class="col-xs-12">
                     <label>Orientation</label>
-                    {{orientation}}
+                    {{user.orientation}}
                 </div>
             </div>
         </div>
 
         <!--Optional/generated parameters-->
         <div class="col-xs-12">
-            <div class="row" id="house">
+            <div class="row" ng-model="user.house">
                 <div class="col-xs-12">
                     <label>You live in a:</label>
-                    {{house}}
+                    {{user.house}}
                 </div>
             </div>
-            <div class="row" id="spouse">
+            <div class="row" ng-model="user.spouse">
                 <div class="col-xs-12">
                     <label>You're married to:</label>
-                    {{spouse}}
+                    {{user.spouse}}
                 </div>
             </div>
-            <div class="row" id="kids">
+            <div class="row" ng-model="user.kids">
                 <div class="col-xs-12">
                     <label>Number of kids:</label>
-                    {{kids}}
+                    {{user.kids}}
                 </div>
             </div>
-            <div class="row" id="job">
+            <div class="row" ng-model="user.job">
                 <div class="col-xs-12">
                     <label>Job:</label>
-                    {{job}}
+                    {{user.job}}
                 </div>
             </div>
-            <div class="row" id="location">
+            <div class="row" ng-model="user.location">
                 <div class="col-xs-12">
                     <label>You will live in:</label>
-                    {{location}}
+                    {{user.location}}
                 </div>
             </div>
-            <div class="row" id="pet">
+            <div class="row" ng-model="user.pet">
                 <div class="col-xs-12">
                     <label>You will have a pet:</label>
-                    {{pet}}
+                    {{user.pet}}
                 </div>
             </div>
-            <div class="row" id="vehicle">
+            <div class="row" ng-model="user.vehicle">
                 <div class="col-xs-12">
                     <label>You will drive a:</label>
-                    {{vehicle}}
+                    {{user.vehicle}}
                 </div>
             </div>
         </div>
@@ -112,16 +112,16 @@
     <div class="row">
         <div class="col-xs-12">
             <a href="mash.html">
-                <button class="btn btn-primary form-control" onclick="processMASH">MASH it up!</button>
+                <button class="btn btn-primary form-control" ng-click="processMASH(user)">MASH it up!</button>
             </a>
         </div>
     </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 <script src="../js/app.js"></script>
 </body>
 </html>

@@ -22,58 +22,58 @@
     </div>
 </div>
 
-<div class="col-xs-12">
+<div class="col-xs-12" ng-init="getALife()">
     <div class="row">
         <div class="col-xs-12">
             <h1>Congrats! The life that awaits you in the future:</h1>
         </div>
     </div>
-    <div class="row" id="house">
+    <div class="row" ng-model="user.house">
         <div class="col-xs-12">
             <label>You live in a:</label>
-            {{house}}
+            {{user.house}}
         </div>
     </div>
-    <div class="row" id="spouse">
+    <div class="row" ng-model="user.spouse">
         <div class="col-xs-12">
             <label>You're married to:</label>
-            {{spouse}}
+            {{user.spouse}}
         </div>
     </div>
-    <div class="row" id="kids">
+    <div class="row" ng-model="user.kids">
         <div class="col-xs-12">
             <label>Number of kids:</label>
-            {{kids}}
+            {{user.kids}}
         </div>
     </div>
-    <div class="row" id="job">
+    <div class="row" ng-model="user.job">
         <div class="col-xs-12">
             <label>Job:</label>
-            {{job}}
+            {{user.job}}
         </div>
     </div>
-    <div class="row" id="location">
+    <div class="row" ng-model="user.location">
         <div class="col-xs-12">
             <label>You will live in:</label>
-            {{location}}
+            {{user.location}}
         </div>
     </div>
-    <div class="row" id="pet">
+    <div class="row" ng-model="user.pet">
         <div class="col-xs-12">
             <label>You will have a pet:</label>
-            {{pet}}
+            {{user.pet}}
         </div>
     </div>
-    <div class="row" id="vehicle">
+    <div class="row" ng-model="user.vehicle">
         <div class="col-xs-12">
             <label>You will drive a:</label>
-            {{vehicle}}
+            {{user.vehicle}}
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
             <a href="details.html">
-                <button class="btn btn-primary" ng-controller="save();" style="width: 100%;">Save</button>
+                <button class="btn btn-primary" ng-click="save(user)" style="width: 100%;">Save</button>
             </a>
         </div>
     </div>
@@ -83,9 +83,9 @@
 
 
 <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-beta.0/angular.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 <script src="../js/app.js"></script>
 </body>
 </html>
