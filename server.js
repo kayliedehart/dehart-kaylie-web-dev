@@ -2,8 +2,11 @@ var express = require('express');
 var app = express();
 
 var bodyParser = require('body-parser');
+var multer = require('multer');
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(multer());
 
 // configure a public directory to host static content
 app.use(express.static(__dirname + '/public'));
