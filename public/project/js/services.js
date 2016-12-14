@@ -64,4 +64,6 @@ module.exports = function(app){
 	app.get('/rest/userProfile/:id', userProfile.findByID);
 	app.put('/rest/userProfile/:id', userProfile.update);
 	app.delete('/rest/userProfile/:id', userProfile.delete);
+
+    app.get('rest/userProfileGet', userProfile.get);
 }

@@ -1,5 +1,5 @@
 (function() {
-    var app = angular.module("MASHApp", ["ngRoute", 'services']);
+    var app = angular.module("MASHApp", ["ngRoute", "ClientServices", "MASHServices"]);
 
     app.config(function($routeProvider) {
         $routeProvider
@@ -29,88 +29,73 @@
     });
 
     app.controller('LoginController',
-        function LoginController($scope, $http, services) {
-            $scope.validate = function (user) {
-                $http.get('/rest/userProfile/:name:password', user.username, user.password)
-                    .then(function(response) {
-                        $scope.id = response._id;
-                    }, function (response) {
-                    $scope.window.alert("Invalid login");
-                });
-            };
+        function LoginController($scope, $http, ClientServices) {
+            ClientServices.readUserById(login);
+
+            function login(response){
+
+            }
         }
     );
 
     app.controller('RegisterController',
-        function RegisterController($scope, $http, services) {
+        function RegisterController($scope, $http, ClientServices) {
 
             $scope.location = ['Boston, MA', 'San Fransisco, CA', 'New York City, NY', 'Washington, DC', 'Denver, CO'];
             $scope.major = ['Computer Science', 'Political Science', 'Physics', 'Engineering', 'English', 'Art', 'History'];
             $scope.gender = ['Female', 'Male', 'Non-Binary', 'Other'];
             $scope.orientation = ['Straight', 'Gay', 'Bisexual', 'Pansexual', 'Asexual'];
 
-            $scope.userInfo = function (user) {
-                $http.post(BASE_URL + '/rest/userProfile', user)
-                    .then(function success(response){
-                        $scope._id = response._id;
-                    }, function failure(response) {
+            ClientServices.createUser(registerUser);
 
-                });
-            };
+            function registerUser(response){
+                $scope.user = response;
+            }
         }
     );
 
     app.controller('ProfileController',
-        function ProfileController($scope, $http, services) {
+        function ProfileController($scope, $http, ClientServices) {
 
             $scope.profileLoad = function (){
-                $http.get(BASE_URL + 'rest/userProfile/:id')
-                    .then(function success(response){
-                        $scope.user = response;
-                    }, function failure(response) {
+                ClientServices.readUserById(renderUser);
 
-                    });
+                function renderUser(response) {
+                    $scope.user = response;
+                }
             };
 
             $scope.deleteConfirm = function () {
-                $scope.window.alert("Are you sure you want to delete your profile?");
-                $http.delete(BASE_URL + 'rest/userProfile/:id')
-                    .then(function success(response){
-                        $scope.user = false;
-                    }, function failure(response) {
+                ClientServices.deleteUserById(returnToLogin);
 
-                    });
-            };
+                function returnToLogin(response){
+
+                }
+            }
+
+
         }
     );
 
     app.controller('MASHController',
-        function MASHController($scope, $http, services) {
+        function MASHController($scope, $http, ClientServices, MASHServices) {
             $scope.getALife = function (){
-                $http.get()
-                    .then(function success(response){
+                MASHServices.constructScenario(renderScenario);
 
-                    }, function failure(response) {
-
-                    });
+                function renderScenario(response){
+                    $scope.user = response;
+                }
             };
 
             $scope.save = function (user) {
-                $http.put(BASE_URL + 'rest/userProfile/:id')
-                    .then(function success(response){
-                        $scope.user = response.user;
-                    }, function failure(response) {
+                ClientServices.updateUserById(saveUser);
 
-                    });
-            };
+                function saveUser(response){
+                    $scope.user = response;
+                }
+            }
+
         }
     );
-
-
-    var services_mod = angular.module("services", []);
-
-    services_mod.factory('services', function() {
-        return {};
-    });
 
 })();

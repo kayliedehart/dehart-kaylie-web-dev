@@ -23,6 +23,23 @@ module.exports = {
 		UserProfile.find(utils.respToJSON(res));
 	},
 
+
+    //GET RID OF THIS LATER
+    get: function(req, res){
+        res.send("Hello World");
+    },
+
+
+
+
+
+
+
+
+
+
+    
+
 	findByID: function(req, res){
 		UserProfile.find({_id: req.params.id}, utils.respToJSON(res));
 	},
