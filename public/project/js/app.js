@@ -30,10 +30,9 @@
 
     app.controller('LoginController',
         function LoginController($scope, $http, ClientServices) {
-            ClientServices.readUserById(login);
 
-            function login(response){
-
+            $scope.validateUser = function (user){
+                ClientServices.readUserById(user);
             }
         }
     );
@@ -41,7 +40,7 @@
     app.controller('RegisterController',
         function RegisterController($scope, $http, ClientServices) {
 
-            $scope.location = ['Boston, MA', 'San Fransisco, CA', 'New York City, NY', 'Washington, DC', 'Denver, CO'];
+            $scope.location = ['Boston, MA', 'San Francisco, CA', 'New York City, NY', 'Washington, DC', 'Denver, CO'];
             $scope.major = ['Computer Science', 'Political Science', 'Physics', 'Engineering', 'English', 'Art', 'History'];
             $scope.gender = ['Female', 'Male', 'Non-Binary', 'Other'];
             $scope.orientation = ['Straight', 'Gay', 'Bisexual', 'Pansexual', 'Asexual'];

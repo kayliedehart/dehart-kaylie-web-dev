@@ -28,43 +28,43 @@
             <h1>Congrats! The life that awaits you in the future:</h1>
         </div>
     </div>
-    <div class="row" ng-model="user.house">
+    <div class="row" ng-show="user.house" ng-model="user.house">
         <div class="col-xs-12">
             <label>You live in a:</label>
             {{user.house}}
         </div>
     </div>
-    <div class="row" ng-model="user.spouse">
+    <div class="row" ng-show="user.spouse" ng-model="user.spouse">
         <div class="col-xs-12">
             <label>You're married to:</label>
             {{user.spouse}}
         </div>
     </div>
-    <div class="row" ng-model="user.kids">
+    <div class="row" ng-show="user.kids" ng-model="user.kids">
         <div class="col-xs-12">
             <label>Number of kids:</label>
             {{user.kids}}
         </div>
     </div>
-    <div class="row" ng-model="user.job">
+    <div class="row" ng-show="user.job" ng-model="user.job">
         <div class="col-xs-12">
             <label>Job:</label>
             {{user.job}}
         </div>
     </div>
-    <div class="row" ng-model="user.location">
+    <div class="row" ng-show="user.location" ng-model="user.location">
         <div class="col-xs-12">
             <label>You will live in:</label>
             {{user.location}}
         </div>
     </div>
-    <div class="row" ng-model="user.pet">
+    <div class="row" ng-show="user.pet" ng-model="user.pet">
         <div class="col-xs-12">
             <label>You will have a pet:</label>
             {{user.pet}}
         </div>
     </div>
-    <div class="row" ng-model="user.vehicle">
+    <div class="row" ng-show="user.vehicle" ng-model="user.vehicle">
         <div class="col-xs-12">
             <label>You will drive a:</label>
             {{user.vehicle}}
