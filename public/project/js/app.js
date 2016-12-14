@@ -46,7 +46,9 @@
             $scope.gender = ['Female', 'Male', 'Non-Binary', 'Other'];
             $scope.orientation = ['Straight', 'Gay', 'Bisexual', 'Pansexual', 'Asexual'];
 
-            ClientServices.createUser(registerUser);
+            function userInfo($scope){
+                ClientServices.createUser($scope.user, registerUser());
+            }
 
             function registerUser(response){
                 $scope.user = response;

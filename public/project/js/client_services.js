@@ -16,7 +16,7 @@
         return userService;
         
         function createUser(callback) {
-            $http.post('/rest/userProfile')
+            $http.post('/rest/userProfile', user)
                 .success(callback);
         }
 
