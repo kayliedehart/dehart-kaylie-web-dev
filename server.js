@@ -16,6 +16,6 @@ var services  =    require('./public/project/js/services')(app);
 require ("./test/app.js")(app);
 
 var ipaddress = process.env.OPENSHIFT_NODEJS_IP;
-var port      = process.env.OPENSHIFT_NODEJS_PORT || 3000;
+var port      = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 
 app.listen(port, ipaddress);
